@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATI Email Guideline - One Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .core-principle {
+            background: #10b981;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: #f8f8f8;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 15px;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+            user-select: none;
+        }
+        
+        .section-header:hover {
+            background: #f0f0f0;
+        }
+        
+        .section-header .icon {
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+        
+        .section-header.active .icon {
+            transform: rotate(180deg);
+        }
+        
+        .section-content {
+            padding: 20px;
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        
+        th {
+            background: #1a1a1a;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        td {
+            padding: 12px;
+            border: 1px solid #e5e5e5;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .channel-icon {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        
+        .email-type {
+            display: inline-block;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        
+        .approve { background: #ef4444; }
+        .consult { background: #f59e0b; }
+        .inform { background: #3b82f6; }
+        .urgent { background: #dc2626; }
+        
+        .formula {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        .example-list {
+            list-style: none;
+            margin-top: 15px;
+            padding: 0;
+        }
+        
+        .example-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 13px;
+        }
+        
+        .example-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 5px;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .rule-131 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .rule-box {
+            background: #f8f8f8;
+            border: 2px solid #10b981;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .rule-box .number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 8px;
+        }
+        
+        .rule-box .label {
+            font-size: 12px;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+        
+        .rule-box .label strong {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+        
+        .why-box {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #1a1a1a;
+        }
+        
+        .raci-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+        
+        .raci-card {
+            background: #f8f8f8;
+            border: 2px solid #10b981;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .raci-letter {
+            font-size: 28px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 8px;
+        }
+        
+        .raci-desc {
+            font-size: 11px;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+        
+        .raci-desc strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+        
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #1a1a1a;
+        }
+        
+        .sla-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .sla-item {
+            background: #f8f8f8;
+            border: 2px solid #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .sla-item.urgent-item {
+            border-color: #ef4444;
+        }
+        
+        .sla-time {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .sla-label {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .sla-info {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #1a1a1a;
+        }
+        
+        .reply-rules {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .reply-rules h4 {
+            font-size: 14px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .reply-rules ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .reply-rules li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 13px;
+        }
+        
+        .reply-rules li::before {
+            content: "✓";
+            position: absolute;
+            left: 5px;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e5e5;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .section-content {
+                display: block !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .rule-131,
+            .sla-box,
+            .raci-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Email Guideline</h1>
+        <div class="subtitle">PATI Group - Internal Communication Standard</div>
+        
+        <div class="core-principle">
+            ✨ Email = Decision Tool | All important decisions MUST go through Email
+        </div>
+
+        <!-- SECTION 1: WHEN TO USE -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>📱 When to Use: Email vs Chat vs Call</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Use When</th>
+                            <th>Do NOT Use When</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="channel-icon">💬</span><strong>Chat (Lark)</strong></td>
+                            <td>• Quick questions<br>• FYI updates<br>• Team coordination<br>• Casual conversation</td>
+                            <td>• Need approval<br>• Formal decisions<br>• Cross-functional requests</td>
+                        </tr>
+                        <tr>
+                            <td><span class="channel-icon">📧</span><strong>Email</strong></td>
+                            <td>• Approval needed<br>• Consult feedback<br>• Official communication<br>• Decisions with impact</td>
+                            <td>• Instant messaging<br>• Casual updates</td>
+                        </tr>
+                        <tr>
+                            <td><span class="channel-icon">📞</span><strong>Call (Phone/Meet)</strong></td>
+                            <td>• URGENT crisis<br>• Complex discussion<br>• Sensitive topics</td>
+                            <td>• Can be written<br>• Needs documentation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION 2: SUBJECT FORMAT -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>✍️ Email Subject Format (Mandatory)</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="formula">
+                    [TYPE - TEAM/NAME] Brief description
+                </div>
+                <p style="font-size: 13px; margin-top: 15px; font-weight: 600;">Examples:</p>
+                <ul class="example-list">
+                    <li>[APPROVE - MKT/Sơn] Budget increase $5K for Q3 campaign</li>
+                    <li>[CONSULT - Tech/Phong] Tech stack decision: React vs Vue</li>
+                    <li>[INFORM - Email/Trang] New onboarding process launched</li>
+                    <li>[URGENT - Tech/Phong] Server down - customer impact</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 3: 4 EMAIL TYPES -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>📋 4 Email Types</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Type</th>
+                            <th style="width: 40%;">When to Use</th>
+                            <th style="width: 40%;">Expected Response</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="email-type approve">APPROVE</span></td>
+                            <td>Need Yes/No decision</td>
+                            <td>Clear approval or rejection with reason</td>
+                        </tr>
+                        <tr>
+                            <td><span class="email-type consult">CONSULT</span></td>
+                            <td>Need feedback/input for decision</td>
+                            <td>Perspectives, suggestions, concerns</td>
+                        </tr>
+                        <tr>
+                            <td><span class="email-type inform">INFORM</span></td>
+                            <td>FYI - no action needed</td>
+                            <td>Read & acknowledge (optional)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="email-type urgent">URGENT</span></td>
+                            <td>Crisis/blocker - immediate action</td>
+                            <td>Response within 30 min</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION 4: 1-3-1 RULE -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>🎯 The 1-3-1 Rule (Email Body Structure)</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="rule-131">
+                    <div class="rule-box">
+                        <div class="number">1</div>
+                        <div class="label">
+                            <strong>CONTEXT</strong>
+                            What's happening<br>(1-2 sentences)
+                        </div>
+                    </div>
+                    <div class="rule-box">
+                        <div class="number">3</div>
+                        <div class="label">
+                            <strong>OPTIONS</strong>
+                            3 possible paths<br>(with pros/cons)
+                        </div>
+                    </div>
+                    <div class="rule-box">
+                        <div class="number">1</div>
+                        <div class="label">
+                            <strong>RECOMMENDATION</strong>
+                            Your suggested choice<br>(with rationale)
+                        </div>
+                    </div>
+                </div>
+                <div class="why-box">
+                    <strong>💡 Why?</strong> Forces sharp thinking, gives decision-maker options, speeds up approval
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: RACI -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>👥 TO/CC Rules (RACI Model)</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="raci-grid">
+                    <div class="raci-card">
+                        <div class="raci-letter">R</div>
+                        <div class="raci-desc">
+                            <strong>Responsible</strong>
+                            Does the work<br>
+                            → <strong>TO: 1 person</strong>
+                        </div>
+                    </div>
+                    <div class="raci-card">
+                        <div class="raci-letter">A</div>
+                        <div class="raci-desc">
+                            <strong>Accountable</strong>
+                            Owns outcome<br>
+                            → <strong>CC</strong>
+                        </div>
+                    </div>
+                    <div class="raci-card">
+                        <div class="raci-letter">C</div>
+                        <div class="raci-desc">
+                            <strong>Consulted</strong>
+                            Gives input<br>
+                            → <strong>CC</strong>
+                        </div>
+                    </div>
+                    <div class="raci-card">
+                        <div class="raci-letter">I</div>
+                        <div class="raci-desc">
+                            <strong>Informed</strong>
+                            Needs to know<br>
+                            → <strong>CC</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="warning-box">
+                    <strong>⚠️ Critical Rule:</strong> TO = 1 person ONLY | CC = Everyone else who needs context
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: SLA -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>⏱️ Response Time SLA</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="sla-box">
+                    <div class="sla-item">
+                        <div class="sla-time">≤ 60 min</div>
+                        <div class="sla-label">APPROVE<br>CONSULT<br>INFORM<br>(Working hours)</div>
+                    </div>
+                    <div class="sla-item urgent-item">
+                        <div class="sla-time">≤ 30 min</div>
+                        <div class="sla-label">URGENT<br>(Anytime)</div>
+                    </div>
+                    <div class="sla-item">
+                        <div class="sla-time">Before 9AM</div>
+                        <div class="sla-label">After-hours email<br>(Reply next morning)</div>
+                    </div>
+                </div>
+                
+                <div class="reply-rules">
+                    <h4>📌 Reply Protocol</h4>
+                    <ul>
+                        <li><strong>Always acknowledge receipt:</strong> "Received and committed to complete by [date X]"</li>
+                        <li><strong>If deadline needs adjustment:</strong> "Propose moving deadline to [date X] due to [specific reason]"</li>
+                        <li><strong>Never work in silence</strong> - Silent execution = communication failure</li>
+                    </ul>
+                </div>
+                
+                <div class="sla-info">
+                    <strong>📅 CEO check time:</strong> 09:30-10:00 & 17:00-17:30<br>
+                    <strong>🚨 URGENT escalation:</strong> Email → SMS/Lark → Call
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Last updated:</strong> May 2026 | <strong>Owner:</strong> People Team | <strong>Version:</strong> 1.0
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const isActive = content.classList.contains('active');
+            
+            // Toggle active state
+            if (isActive) {
+                content.classList.remove('active');
+                header.classList.remove('active');
+            } else {
+                content.classList.add('active');
+                header.classList.add('active');
+            }
+        }
+        
+        // Open first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstHeader = document.querySelector('.section-header');
+            if (firstHeader) {
+                toggleSection(firstHeader);
+            }
+        });
+    </script>
+</body>
+</html>
